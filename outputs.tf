@@ -70,5 +70,5 @@ output "autoscaling_policy_scale_up_arn" {
 
 output "ecs_cluster_arn" {
   description = "ARN of the ECS cluster"
-  value       = aws_ecs_cluster.default.arn
+  value       = join("", aws_ecs_cluster.default.*.arn)
 }
